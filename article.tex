@@ -1,0 +1,199 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Latex Nice Article
+%
+% Author(s):
+% Marwan Abdellah (abdelah.marwan@gmail.com)
+%
+% License:
+% MIT License 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article} 				% Generate the final document 
+% \documentclass[draft, 12pt]{article} 	% Testing the document without images 
+
+% Load the structure of the template article.
+\input{structure.tex}
+
+% Add the capability to add a background image to the text.
+\input{background-enabling.tex}
+
+% Let's begin the document. 
+\begin{document}
+
+% Specifiy the addition of the background to the text. 
+\input{background-addition.tex}
+
+% Add the cover Page.
+\input{article-cover.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lists 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}
+
+% Add the table of contents, or comment it. 
+\tableofcontents
+
+% Add the list of figures, or comment it. 
+\listoffigures
+ 
+% Add the list of tables, or comment it. 
+\listoftables
+
+% Define the list of acronyms and add them. 
+\input{acronyms.tex}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+% Adding the abstract page 
+\input{abstract.tex}
+
+% Restore normal font if any interruptions. 
+\normalfont 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Article starts here !
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Article starts here !
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Introduction 
+\section{Introduction} \label{section:introduction}
+\lipsum[2-3]
+
+A statement\footnote{Example of a footnote} requiring citation \cite{Figueredo:2009dg}. 
+Some mathematics in the text: $\cos\pi=-1$ and $\alpha$.
+
+\subsection{It is just a template !} \label{subsection:intro-subsection}
+\lipsum[20]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Methods
+\section{Methods} \label{section:methods}
+Reference to Figure~\vref{fig:gallery}. % The \vref command specifies the location of the reference
+The acronym \ac{ABC} is used here. 
+
+\begin{figure}[tb]
+\centering 
+\includegraphics[width=0.5\columnwidth]{sample-image-2} 
+\caption[An example of a floating figure]{An example of a floating figure (a reproduction from the \emph{Gallery of prints}, M.~Escher,\index{Escher, M.~C.} from \url{http://www.mcescher.com/}).} 
+\label{fig:gallery} 
+\end{figure}
+
+\lipsum[5]
+
+\subsection{Paragraphs}
+\lipsum[6] 
+
+\paragraph{Paragraph Description} 
+\lipsum[7] 
+
+\paragraph{Different Paragraph Description} 
+\lipsum[8] 
+
+\subsection{Math}
+\lipsum[4] 
+
+\begin{equation}
+\cos^3 \theta =\frac{1}{4}\cos\theta+\frac{3}{4}\cos 3\theta
+\label{eq:refname2}
+\end{equation}
+
+\lipsum[5] 
+
+\begin{definition}[Gauss] 
+To a mathematician it is obvious that
+$\int_{-\infty}^{+\infty}
+e^{-x^2}\,dx=\sqrt{\pi}$. 
+\end{definition} 
+
+\begin{theorem}[Pythagoras]
+The square of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the other two sides.
+\end{theorem}
+
+\begin{proof} 
+We have that $\log(1)^2 = 2\log(1)$.
+But we also have that $\log(-1)^2=\log(1)=0$.
+Then $2\log(-1)=0$, from which the proof.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Results and Discussion 
+\section{Results and Discussion} \label{section:results-and-discussion}
+\lipsum[10]
+
+\subsection{Results} \label{subsection:results}
+
+\lipsum[11]
+
+\subsubsection{Some Results} \label{subsubsection:some-results}
+\lipsum[12] 
+
+\begin{description}
+\item[Word] Definition
+\item[Concept] Explanation
+\item[Idea] Text
+\end{description}
+
+\lipsum[12] 
+
+\subsubsection{Table} \label{subsubsection:table}
+\lipsum[13] 
+
+\begin{table}[hbt]
+\caption{Table of Grades}
+\centering
+\begin{tabular}{llr}
+\toprule
+\multicolumn{2}{c}{Name} \\
+\cmidrule(r){1-2}
+First name & Last Name & Grade \\
+\midrule
+John & Doe & $7.5$ \\
+Richard & Miles & $2$ \\
+\bottomrule
+\end{tabular}
+\label{tab:label}
+\end{table}
+
+Reference to Table~\vref{tab:label}. % The \vref command specifies the location of the reference
+
+\subsection{Figure Composed of Subfigures} \label{subsection:compound}
+Reference the figure composed of multiple subfigures as Figure~\vref{fig:esempio}. Reference one of the subfigures as Figure~\vref{fig:ipsum}. 
+
+\lipsum[15-18]
+
+\begin{figure}[tb]
+\centering
+\subfloat[A city market.]{\includegraphics[width=.45\columnwidth]{sample-image-1}} \quad
+\subfloat[Forest landscape.]{\includegraphics[width=.45\columnwidth]{sample-image-3}\label{fig:ipsum}} \\
+\subfloat[Mountain landscape.]{\includegraphics[width=.45\columnwidth]{sample-image-4}} \quad
+\subfloat[A tile decoration.]{\includegraphics[width=.45\columnwidth]{sample-image-5}}
+\caption[A number of pictures.]{A number of pictures with no common theme.}
+\label{fig:esempio}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% References 
+
+% Plain style 
+\bibliographystyle{unsrt}				
+
+% Set the size to footnote size for small articles.
+%\footnotesize
+
+% Set the references in two columns. 
+%\twocolumn
+
+% The input .bib file
+\bibliography{references}	 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Article ends here !
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Article ends here !
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

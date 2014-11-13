@@ -1,0 +1,142 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Latex Nice Article
+% Structure specification file.
+%
+% Author(s):
+% Marwan Abdellah (abdelah.marwan@gmail.com)
+%
+% License:
+% MIT License 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Graphics 
+\usepackage{graphicx} 
+% Appendix 
+\usepackage[titletoc,toc]{appendix} 
+
+% Orange notes 
+\usepackage{todonotes} 
+
+% Hidden comments
+\usepackage{comment} 
+
+% Acronyms 
+\usepackage[printonlyused]{acronym} 
+
+% Multicolumn
+\usepackage{multicol} 
+
+% Collapse
+\usepackage{etoolbox} 
+\usepackage[outercaption]{sidecap} 
+\usepackage{booktabs}
+
+% References 
+\usepackage{xcolor}
+
+% References and links 
+\usepackage{hyperref}
+
+% Figure-related packages 
+\usepackage{subfigure}
+\usepackage{wrapfig}
+
+% Fonts 
+\usepackage[T1]{fontenc}
+ % Required for including letters with accents
+\usepackage[utf8]{inputenc}
+
+% Italic section
+\usepackage[it]{titlesec} 
+
+% A garbage package you don't need except to create examples.
+\usepackage{lipsum} 
+ 
+% Headers 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% Header titles 
+\renewcommand{\headrulewidth}{0.1pt}
+% Header data 
+\newlength\FHoffset
+\setlength\FHoffset{0cm}
+\addtolength\headwidth{0\FHoffset}
+\fancyheadoffset{\FHoffset}
+
+\fancyhead[LO,LE]{\emph{\fontsize{10}{12}\selectfont\nouppercase Title}} 
+\fancyhead[RO,RE]{\fontsize{10}{12}\selectfont\nouppercase } % Empty
+
+% Adjust the margins 
+\usepackage[margin=0.8 in]{geometry}
+
+% Default line 
+%\renewcommand*\familydefault{\sfdefault} 
+
+% Math equations 
+\usepackage[sc]{mathpazo}
+
+% Palatino needs more leading (space between lines)
+\linespread{1.05}         
+
+% Image oath 
+\graphicspath{{images/}}
+
+% Background image 
+\usepackage{eso-pic}
+
+% Required for including images
+\usepackage{graphicx} 
+
+% Required for manipulating the whitespace between and within lists
+\usepackage{enumitem} 
+
+% Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{lipsum} 
+
+% For including math equations, theorems, symbols, etc
+\usepackage{amsmath,amssymb,amsthm} 
+
+% More descriptive referencing
+\usepackage{varioref} 
+
+% Add the colors 
+\input{rgb.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	HYPERLINKS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+	colorlinks = true, 
+	breaklinks = true, 
+	bookmarks = true,
+	bookmarksnumbered,
+	urlcolor = maroon, 
+	linkcolor = blue-sky, 
+	citecolor = blue-sky, 
+	linktoc=page, 
+	pdftitle={}, 
+	pdfauthor={\textcopyright Author}, 
+	pdfsubject={}, 
+	pdfkeywords={}, 
+	pdfcreator={pdfLaTeX}, % PDF Creator
+pdfproducer={This PDF was generated based on Marwan Abdellah's Template} 
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	THEOREM STYLES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define theorem styles here based on the definition style (used for definitions and examples)
+\theoremstyle{definition} 
+\newtheorem{definition}{Definition}
+
+% Define theorem styles here based on the plain style (used for theorems, lemmas, propositions)
+\theoremstyle{plain} 
+\newtheorem{theorem}{Theorem}
+
+% Define theorem styles here based on the remark style (used for remarks and notes)
+\theoremstyle{remark} 
